@@ -1,0 +1,335 @@
+[1] Page: Home (index)
+Path: content[0].content[1].content[0].content[1]
+Text: Revolutionizing global staffing with predictive algorithms connecting employers to the world's top talent.
+================================================================================
+
+[2] Page: Home (index)
+Path: content[0].content[1].content[0].content[2]
+Text: Hirextra leverages proprietary technology, massive datasets, and global reach to efficiently connect employers to specialized agency recruiters worldwide.
+================================================================================
+
+[3] Page: Home (index)
+Path: content[1].content[0].content[0].content[1]
+Text: Hirextra connects businesses with top talent worldwide. We simplify the hiring process by aggregating staffing solutions, saving you time and effort. Our platform ensures you quickly find the perfect fit, helping your team grow efficiently. Let Hirextra handle your staffing needs so you can focus on what matters most.
+================================================================================
+
+[4] Page: Home (index)
+Path: content[2].content[0].content[0].content[1]
+Text: As the world's pioneering staffing aggregator, Hirextra transforms recruitment by linking employers with Staffing Agency Recruiters worldwide. Our intelligent platform provides instant access to top talent resources, streamlining the hiring process.
+================================================================================
+
+[5] Page: Home (index)
+Path: content[2].content[1].content[1].content[2]
+Text: Our dedicated Account Manager Support ensures that you receive personalized assistance tailored to your unique needs
+================================================================================
+
+[6] Page: Home (index)
+Path: content[2].content[1].content[1].content[5]
+Text: Our innovative platform instantly matches employers to specified recruiters around the world to meet urgent hiring need.
+================================================================================
+
+[7] Page: Home (index)
+Path: content[2].content[1].content[1].content[8]
+Text: Provides a space that connects agency recruiters and employers.
+================================================================================
+
+[8] Page: Home (index)
+Path: content[2].content[1].content[2].content[2]
+Text: Our comprehensive Pre-Hire Measures ensure top talent selection through rigorous screening and assessments, while our Post-Hire Measures support retention and development with effective onboarding and continuous performance tracking.
+================================================================================
+
+[9] Page: Home (index)
+Path: content[2].content[1].content[2].content[5]
+Text: By aggregating the best recruiters globally,hirextra provides employers access to top-tier talent at a fraction of the cost.
+================================================================================
+
+[10] Page: Home (index)
+Path: content[2].content[1].content[2].content[8]
+Text: Ensures every hiring requirement is fulfilled effectively
+================================================================================
+
+[11] Page: Home (index)
+Path: content[4].content[0].content[0].content[1]
+Text: Experience the future of recruitment with our advanced AI and machine learning technology. HireXtra's direct sourcing capabilities ensure you connect with the best talent efficiently and effectively. Our intelligent platform streamlines your hiring process, delivering top candidates quickly and accurately. Let our cutting-edge technology work for you, transforming your staffing needs into a seamless experience.
+================================================================================
+
+[12] Page: Home (index)
+Path: content[5].content[0].content[0].content[1]
+Text: Harness the power of the world's largest contingent People data set to gain precise rate intelligence for workers sourced globally.
+================================================================================
+
+[13] Page: Home (index)
+Path: content[6].content[0].content[0].content[1]
+Text: Curated Talent Solutions provide a tailored recruitment approach, meticulously selecting top-tier candidates for specific roles. By combining advanced technology with human expertise, these solutions streamline the hiring process and enhance the quality of hires. This service saves time for hiring managers and ensures a positive candidate experience through clear communication and timely feedback.
+================================================================================
+
+[14] Page: Home (index)
+Path: content[7].content[0].content[0].content[1]
+Text: HireXtra offers a wide range of managed staffing solutions to support your business in various areas. Whether you need staffing for healthcare or information technology sectors, or services related to payroll, workforce management, program management and delivery, infrastructure oversight, or managing travel expenses, we've got you covered. Our 24/7 support services and dedicated account management ensure you can focus on the essential operations of your business, ensuring smooth and uninterrupted functionality.
+================================================================================
+
+[15] Page: Home (index)
+Path: content[7].content[1].content[0].content[0]
+Text: How it works?
+================================================================================
+
+[16] Page: Home (index)
+Path: content[7].content[1].content[0].content[2]
+Text: Expand your client base, attract more leads, and enhance your sales seamlessly with our easy-to-use one-click platform.
+================================================================================
+
+[17] Page: Home (index)
+Path: content[9].content[0].content[0].content[0].content[1].content[1]
+Text: Enhance your operational efficiency with Hirextra's Managed Service Provider (MSP) solutions. We manage your AI systems comprehensively, ensuring they perfectly align with your business goals. From deployment to maintenance, we optimize performance and foster innovation
+================================================================================
+
+[18] Page: Home (index)
+Path: content[9].content[0].content[0].content[0].content[1].content[2]
+Text: Quickly access contingent talent to overcome shortages and maintain a competitive edge.&nbsp;
+We offer top-quality STEM talent for specialized roles, saving costs without compromising on skill.&nbsp;
+Our governance ensures clear oversight and actionable insights through data analysis.&nbsp;
+Embracing diversity and social value is integral to our MSP programs, reflecting our commitment to inclusive workforce practices.
+================================================================================
+
+[19] Page: Home (index)
+Path: content[9].content[0].content[0].content[1].content[1].content[1]
+Text: Hirextra AI Recruitment Process Outsourcing (RPO) for small businesses provides a cost-effective and efficient solution to improve recruitment using AI technologies. Small businesses can utilize advanced tools and expertise through AI RPO to streamline hiring procedures and attract top talent.
+================================================================================
+
+[20] Page: Home (index)
+Path: content[9].content[0].content[0].content[1].content[1].content[2]
+Text: Scalable Solutions: AI RPO can be customized to the specific needs and size of small businesses, providing scalable solutions for their recruitment challenges.
+Time and Cost Savings: By automating repetitive tasks like resume screening and candidate matching, AI RPO helps save time and reduce recruitment costs.
+Improved Quality of Hire: AI algorithms ensure a data-driven approach to candidate selection, resulting in higher-quality hires that fit the business requirements.
+Enhanced Candidate Experience: The use of AI technology enhances the candidate experience by providing quick responses, personalized interactions, and a seamless recruitment journey.
+================================================================================
+
+[21] Page: Home (index)
+Path: content[9].content[0].content[0].content[2].content[1].content[1]
+Text: Recruiting as a Service (RaaS) is a comprehensive solution provided by Hirextra to streamline the entire recruitment process for organizations. With RaaS, clients can benefit from a personalized and efficient approach to sourcing, screening, and hiring top talent.
+================================================================================
+
+[22] Page: Home (index)
+Path: content[9].content[0].content[0].content[2].content[1].content[2]
+Text: Tailored Recruitment Strategy: Our team collaborates with clients to understand their unique hiring needs and devise a customized recruitment plan.
+Candidate Sourcing and Screening: Utilizing AI algorithms and data-driven insights, we source high-quality candidates and conduct thorough screenings to ensure the best fit for the role.
+Interview Coordination: RaaS includes managing the interview process, scheduling candidate interactions, and facilitating communication between all parties involved.
+Offer Management: From negotiation to onboarding, we handle offer management to ensure a smooth transition for the selected candidates.
+================================================================================
+
+[23] Page: Home (index)
+Path: content[9].content[0].content[0].content[3].content[1].content[1]
+Text: Sourcing as a Service (SaaS) is an innovative solution offered by Hirextra that transforms how companies find top talent. With SaaS, clients can experience a smooth and efficient sourcing process, driven by AI algorithms and advanced technologies.
+================================================================================
+
+[24] Page: Home (index)
+Path: content[9].content[0].content[0].content[3].content[1].content[2]
+Text: Automated Resume Sourcing: Our AI-powered system searches through various connected databases and publicly available sources to find potential candidates that meet your requirements
+Smart Match and Score: The system assesses and scores resumes based on predefined criteria, ensuring an accurate match with your job specifications.
+Direct Calling: After scoring resumes, our system can initiate direct contact with candidates, streamlining communication.
+Minimal Human Interaction: SaaS reduces the need for manual intervention, saving time and resources while delivering high-quality results.
+================================================================================
+
+[25] Page: Home (index)
+Path: content[11].content[0].content[0].content[1]
+Text: HireXtra is an AI recruitment startup innovating the hiring process with intelligent solutions like HireGPT, SkillPassport and Autonomous AI Recruiter.
+================================================================================
+
+[26] Page: Home (index)
+Path: content[11].content[1].content[0].content[1]
+Text: Skill Passport on HireXtra.com is an innovative feature designed to revolutionize the way employers and recruiters manage and verify candidate skills. This comprehensive digital profile encapsulates a candidate’s verified skills, certifications, and experiences, making the recruitment process more efficient and transparent.
+================================================================================
+
+[27] Page: Home (index)
+Path: content[11].content[1].content[1].content[1]
+Text: AI recruiters, and talent professionals can swiftly discover top-notch candidates with our hireGPT. It provides deeper insights into employees, streamlining onboarding and enabling smarter hiring choices for organizational advancement.
+================================================================================
+
+[28] Page: Home (index)
+Path: content[11].content[1].content[3].content[0].content[0].content[0]
+Text: Could it be done? Let's give it a shot and see!
+================================================================================
+
+[29] Page: Home (index)
+Path: content[11].content[2].content[0].content[1]
+Text: At HireXtra.com, we're redefining recruitment through cutting-edge AI technology. Our platform harnesses the power of artificial intelligence to streamline and enhance every step of the hiring process, from sourcing to onboarding.
+================================================================================
+
+[30] Page: Home (index)
+Path: content[11].content[2].content[1].content[1]
+Text: Our AI recruiters harness the combined capabilities of artificial intelligence (AI) and human intelligence (HI) to form a robust recruitment force. By seamlessly integrating AI agents with human experts, we offer a comprehensive approach to talent acquisition that boosts efficiency and effectiveness, establishing new industry benchmarks.
+================================================================================
+
+[31] Page: Home (index)
+Path: content[12].content[0].content[0].content[1]
+Text: Hirextra offers revolutionary global staffing solutions helping companies hire top talent across 142 countries. Our AI-powered platform handles everything from sourcing and background checks to payroll and compliance.
+================================================================================
+
+[32] Page: Home (index)
+Path: content[12].content[1].content[0].content[2]
+Text: We use advanced sourcing techniques like farming, hunting, nesting and harvesting to find the perfect candidates for your roles.
+================================================================================
+
+[33] Page: Home (index)
+Path: content[12].content[1].content[1].content[2]
+Text: Leverages deep learning to analyze job requirements and candidate profiles, ensuring precise matches based on skills, experience, and cultural fit.
+================================================================================
+
+[34] Page: Home (index)
+Path: content[12].content[1].content[2].content[2]
+Text: Conducts initial screenings and interviews using AI-driven voice technology, significantly reducing time-to-hire.
+================================================================================
+
+[35] Page: Home (index)
+Path: content[12].content[1].content[3].content[2]
+Text: Collect and parse resumes from various sources to build a rich candidate database.
+================================================================================
+
+[36] Page: Home (index)
+Path: content[12].content[1].content[4].content[2]
+Text: Real-time data and insights on recruitment metrics and performance.
+================================================================================
+
+[37] Page: Home (index)
+Path: content[12].content[1].content[5].content[2]
+Text: Tools that allow team members to collaborate on candidate evaluation and decision-making.
+================================================================================
+
+[38] Page: Home (index)
+Path: content[12].content[2].content[0].content[2]
+Text: Our innovative approach streamlines and enhances the candidate sourcing process by directly extracting comprehensive and relevant information. This method allows users to effortlessly access detailed candidate data, saving time and reducing the administrative burden of manual data entry.
+================================================================================
+
+[39] Page: Home (index)
+Path: content[12].content[2].content[1].content[2]
+Text: Active and targeted approach to finding candidates who meet your specific needs, ensuring they fit your company’s environment and culture.
+================================================================================
+
+[40] Page: Home (index)
+Path: content[12].content[2].content[2].content[2]
+Text: Our innovative Nesting approach consolidates and organizes candidate information in a structured and accessible way.&nbsp;
+================================================================================
+
+[41] Page: Home (index)
+Path: content[13].content[0].content[0].content[1]
+Text: Partner with us for Recruitment Excellence
+================================================================================
+
+[42] Page: Home (index)
+Path: content[14].content[0].content[0].content[1].content[0].content[2]
+Text: Payroll Countries
+================================================================================
+
+[43] Page: Home (index)
+Path: content[14].content[0].content[0].content[1].content[0].content[3]
+Text: We manage payroll and compliance in 142 countries around the world.
+================================================================================
+
+[44] Page: Home (index)
+Path: content[14].content[0].content[0].content[1].content[1].content[2]
+Text: Staffing Countries
+================================================================================
+
+[45] Page: Home (index)
+Path: content[14].content[0].content[0].content[1].content[1].content[3]
+Text: We operate in over 70 countries, providing global workforce solutions.
+================================================================================
+
+[46] Page: Home (index)
+Path: content[14].content[0].content[0].content[2].content[0].content[2]
+Text: People Data sets
+================================================================================
+
+[47] Page: Home (index)
+Path: content[14].content[0].content[0].content[2].content[0].content[3]
+Text: With access to over 3.3 billion data points, we leverage data and analytics to match talent to roles.
+================================================================================
+
+[48] Page: Home (index)
+Path: content[14].content[0].content[0].content[2].content[1].content[2]
+Text: Algorithms
+================================================================================
+
+[49] Page: Home (index)
+Path: content[14].content[0].content[0].content[2].content[1].content[3]
+Text: Our 23 proprietary algorithms ensure we make the best recommendations for hiring.
+================================================================================
+
+[50] Page: Platform Overview (PlatformOverview)
+Path: content[1].content[2].content[0].content[0]
+Text: No Hire, No Fee...Share Your Needs with Us
+================================================================================
+
+[51] Page: Platform Overview (PlatformOverview)
+Path: content[1].content[3].content[0].content[1]
+Text: AI-guided job and candidate matching enables faster sourcing, broader talent pools, and more accurate role matches through intelligent resume parsing.
+================================================================================
+
+[52] Page: Platform Overview (PlatformOverview)
+Path: content[1].content[3].content[1].content[1]
+Text: Predictive analytics and big data empower us to optimize resource allocation and drive cost savings.
+================================================================================
+
+[53] Page: Platform Overview (PlatformOverview)
+Path: content[1].content[3].content[2].content[1]
+Text: The AI Skills Engine offers organizations personalized recommendations to upskill employees, enhance talent pools, and provide growth opportunities.
+================================================================================
+
+[54] Page: Platform Overview (PlatformOverview)
+Path: content[3].content[0].content[1].content[1]
+Text: Enable your teams to drive better business decisions with access to leading workforce management systems that include:​
+
+
+Direct Sourcing
+Services Procurement
+================================================================================
+
+[55] Page: Platform Overview (PlatformOverview)
+Path: content[3].content[1].content[0].content[1]
+Text: Enhance your organization’s management of the end-to-end contingent workforce management lifecycle with market-leading, vendor-neutral services:
+
+Managed Service Provider
+Recruitment process outsourcing
+RAAS
+SAAS
+================================================================================
+
+[56] Page: Platform Overview (PlatformOverview)
+Path: content[3].content[2].content[1].content[1]
+Text: Power your teams to make strategic hiring and retention decisions with access to the world’s largest global market rate, salary, and talent intelligence dataset backed by a robust partner ecosystem:
+
+Performance Metrics
+Real-Time Data Insights
+Customizable Reports
+Continuous Improvement
+================================================================================
+
+[57] Page: Business Consultant services (BusinessConsultantServices)
+Path: content[1].content[0].content[0].content[1]
+Text: Boost your business with HireXtra’s expert consulting services. Our experienced consultants offer tailored solutions to solve your unique challenges and drive growth. Let us help you achieve your goals with precision and ease.
+================================================================================
+
+[58] Page: Business Consultant services (BusinessConsultantServices)
+Path: content[3].content[0].content[1].content[1]
+Text: HireXtra's services stand out as the best choice for attracting users due to their commitment to delivering exceptional value and tailored solutions. Here’s why
+================================================================================
+
+[59] Page: Business Consultant services (BusinessConsultantServices)
+Path: content[3].content[0].content[1].content[3]
+Text: Talent dispositioning with HireXtra AI-driven solutions identified significant cost savings over 14 years, optimizing your hiring budget and resource allocation.
+================================================================================
+
+[60] Page: Business Consultant services (BusinessConsultantServices)
+Path: content[3].content[0].content[1].content[5]
+Text: A workforce consolidation strategy with HireXtra demonstrated potential savings by streamlining recruitment processes and reducing redundancies, ensuring you have the right talent at the right time.
+================================================================================
+
+[61] Page: Business Consultant services (BusinessConsultantServices)
+Path: content[3].content[0].content[1].content[7]
+Text: HireXtra tailored hiring strategy design can help your organization adopt 100% effective recruitment practices, reducing financial impact while ensuring the highest quality hires. Our advanced models incorporate dynamic scheduling and transformation costs to align with your business growth.
+================================================================================
+
+[62] Page: Business Consultant services (BusinessConsultantServices)
+Path: content[4].content[0].content[1].content[0]
+Text: For some, efficient hiring may just be a trendy term for basic recruitment. At HireXtra, we see it as a strategic approach. We focus on optimizing recruitment costs, increasing workforce value, and ensuring transparency with tailored solutions that drive significant savings.
+================================================================================
