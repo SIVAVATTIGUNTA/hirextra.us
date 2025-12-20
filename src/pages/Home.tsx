@@ -127,6 +127,15 @@ export default function Home() {
                 HireXtra intelligently connects employers with the right recruitment agencies—faster, smarter, and at global scale using autonomous AI agents.
               </p>
 
+              {/* AI + HI = ROI Formula */}
+              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-white/10 backdrop-blur-sm mt-4">
+                <span className="text-2xl font-bold text-white">AI</span>
+                <span className="text-xl text-slate-300">+</span>
+                <span className="text-2xl font-bold text-white">HI</span>
+                <span className="text-xl text-slate-300">=</span>
+                <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-400">ROI</span>
+              </div>
+
               {/* CTA BUTTONS */}
               <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start pt-2">
                 
@@ -234,7 +243,6 @@ export default function Home() {
         </div>
       </div>
     </section>
-
 
       {/* Engage with Top Talent Section */}
       <section className="py-20 bg-light fade-in">
@@ -603,19 +611,29 @@ export default function Home() {
                       Enhance your operational efficiency with Hirextra's Managed Service Provider (MSP) solutions. We manage your AI systems comprehensively, ensuring they perfectly align with your business goals. From deployment to maintenance, we optimize performance and foster innovation
                     </p>
                     <ul className="list-disc list-inside space-y-2 text-body">
-                      <li>Quickly access contingent talent to overcome shortages and maintain a competitive edge.</li>
-                      <li>We offer top-quality STEM talent for specialized roles, saving costs without compromising on skill.</li>
-                      <li>Our governance ensures clear oversight and actionable insights through data analysis.</li>
-                      <li>Embracing diversity and social value is integral to our MSP programs, reflecting our commitment to inclusive workforce practices.</li>
+                      <li>Instant access to contingent talent pools to overcome shortages and maintain competitive advantage</li>
+                      <li>Premium STEM talent sourcing for specialized roles, delivering cost savings without skill compromise</li>
+                      <li>Advanced governance with real-time oversight and data-driven actionable insights</li>
+                      <li>Diversity-first approach integrated into MSP programs, ensuring inclusive workforce practices</li>
                     </ul>
                     <Link to="/managed-service-provider" className="link-hover inline-block mt-4 text-brand font-semibold">
                       Learn More →
                     </Link>
                   </div>
                 </div>
-                <div className="grid grid-cols-2 gap-4">
-                  <img src={msp1} alt="MSP Service" loading="lazy" className="rounded-lg shadow-lg w-full h-40 md:h-52 object-cover transition-transform duration-300 hover:scale-105" />
-                  <img src={msp2} alt="MSP Service" loading="lazy" className="rounded-lg shadow-lg w-full h-40 md:h-52 object-cover transition-transform duration-300 hover:scale-105" />
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="relative group">
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+                    <div className="relative rounded-2xl overflow-hidden border-2 border-gradient-to-br from-blue-200/50 to-purple-200/50 bg-gradient-to-br from-white to-gray-50 p-1 shadow-xl">
+                      <img src={msp1} alt="MSP Service" loading="lazy" className="w-full h-48 md:h-64 object-cover rounded-xl transition-transform duration-500 group-hover:scale-110" />
+                    </div>
+                  </div>
+                  <div className="relative group">
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+                    <div className="relative rounded-2xl overflow-hidden border-2 border-gradient-to-br from-purple-200/50 to-pink-200/50 bg-gradient-to-br from-white to-gray-50 p-1 shadow-xl">
+                      <img src={msp2} alt="MSP Service" loading="lazy" className="w-full h-48 md:h-64 object-cover rounded-xl transition-transform duration-500 group-hover:scale-110" />
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -633,19 +651,29 @@ export default function Home() {
                       Hirextra AI Recruitment Process Outsourcing (RPO) for small businesses provides a cost-effective and efficient solution to improve recruitment using AI technologies. Small businesses can utilize advanced tools and expertise through AI RPO to streamline hiring procedures and attract top talent.
                     </p>
                     <ul className="list-disc list-inside space-y-2 text-body">
-                      <li>Scalable Solutions: AI RPO can be customized to the specific needs and size of small businesses, providing scalable solutions for their recruitment challenges.</li>
-                      <li>Time and Cost Savings: By automating repetitive tasks like resume screening and candidate matching, AI RPO helps save time and reduce recruitment costs.</li>
-                      <li>Improved Quality of Hire: AI algorithms ensure a data-driven approach to candidate selection, resulting in higher-quality hires that fit the business requirements.</li>
-                      <li>Enhanced Candidate Experience: The use of AI technology enhances the candidate experience by providing quick responses, personalized interactions, and a seamless recruitment journey.</li>
+                      <li>Fully scalable solutions tailored to business size and specific recruitment needs</li>
+                      <li>Automated resume screening and candidate matching reduce time-to-hire by up to 50%</li>
+                      <li>AI-powered algorithms deliver data-driven candidate selection for higher-quality hires</li>
+                      <li>Seamless candidate experience with instant responses and personalized interactions</li>
                     </ul>
                     <Link to="/recruitment-process-outsourcing" className="link-hover inline-block mt-4 text-brand font-semibold">
                       Learn More →
                     </Link>
                   </div>
                 </div>
-                <div className="grid grid-cols-2 gap-4">
-                  <img src={rpo1} alt="RPO Service" loading="lazy" className="rounded-lg shadow-lg w-full h-40 md:h-52 object-cover transition-transform duration-300 hover:scale-105" />
-                  <img src={rpo2} alt="RPO Service" loading="lazy" className="rounded-lg shadow-lg w-full h-40 md:h-52 object-cover transition-transform duration-300 hover:scale-105" />
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="relative group">
+                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+                    <div className="relative rounded-2xl overflow-hidden border-2 border-gradient-to-br from-emerald-200/50 to-teal-200/50 bg-gradient-to-br from-white to-gray-50 p-1 shadow-xl">
+                      <img src={rpo1} alt="RPO Service" loading="lazy" className="w-full h-48 md:h-64 object-cover rounded-xl transition-transform duration-500 group-hover:scale-110" />
+                    </div>
+                  </div>
+                  <div className="relative group">
+                    <div className="absolute inset-0 bg-gradient-to-br from-teal-500/20 to-cyan-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+                    <div className="relative rounded-2xl overflow-hidden border-2 border-gradient-to-br from-teal-200/50 to-cyan-200/50 bg-gradient-to-br from-white to-gray-50 p-1 shadow-xl">
+                      <img src={rpo2} alt="RPO Service" loading="lazy" className="w-full h-48 md:h-64 object-cover rounded-xl transition-transform duration-500 group-hover:scale-110" />
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -663,19 +691,29 @@ export default function Home() {
                       Recruiting as a Service (RaaS) is a comprehensive solution provided by Hirextra to streamline the entire recruitment process for organizations. With RaaS, clients can benefit from a personalized and efficient approach to sourcing, screening, and hiring top talent.
                     </p>
                     <ul className="list-disc list-inside space-y-2 text-body">
-                      <li>Tailored Recruitment Strategy: Our team collaborates with clients to understand their unique hiring needs and devise a customized recruitment plan.</li>
-                      <li>Candidate Sourcing and Screening: Utilizing AI algorithms and data-driven insights, we source high-quality candidates and conduct thorough screenings to ensure the best fit for the role.</li>
-                      <li>Interview Coordination: RaaS includes managing the interview process, scheduling candidate interactions, and facilitating communication between all parties involved.</li>
-                      <li>Offer Management: From negotiation to onboarding, we handle offer management to ensure a smooth transition for the selected candidates.</li>
+                      <li>Custom recruitment strategies designed to align with your unique hiring objectives</li>
+                      <li>AI-powered candidate sourcing and comprehensive screening for optimal role fit</li>
+                      <li>End-to-end interview coordination with seamless scheduling and communication</li>
+                      <li>Complete offer management from negotiation through onboarding for smooth transitions</li>
                     </ul>
                     <Link to="/raas" className="link-hover inline-block mt-4 text-brand font-semibold">
                       Learn More →
                     </Link>
                   </div>
                 </div>
-                <div className="grid grid-cols-2 gap-4">
-                  <img src={raas1} alt="RAAS Service" loading="lazy" className="rounded-lg shadow-lg w-full h-40 md:h-52 object-cover transition-transform duration-300 hover:scale-105" />
-                  <img src={raas2} alt="RAAS Service" loading="lazy" className="rounded-lg shadow-lg w-full h-40 md:h-52 object-cover transition-transform duration-300 hover:scale-105" />
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="relative group">
+                    <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+                    <div className="relative rounded-2xl overflow-hidden border-2 border-gradient-to-br from-orange-200/50 to-red-200/50 bg-gradient-to-br from-white to-gray-50 p-1 shadow-xl">
+                      <img src={raas1} alt="RAAS Service" loading="lazy" className="w-full h-48 md:h-64 object-cover rounded-xl transition-transform duration-500 group-hover:scale-110" />
+                    </div>
+                  </div>
+                  <div className="relative group">
+                    <div className="absolute inset-0 bg-gradient-to-br from-red-500/20 to-rose-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+                    <div className="relative rounded-2xl overflow-hidden border-2 border-gradient-to-br from-red-200/50 to-rose-200/50 bg-gradient-to-br from-white to-gray-50 p-1 shadow-xl">
+                      <img src={raas2} alt="RAAS Service" loading="lazy" className="w-full h-48 md:h-64 object-cover rounded-xl transition-transform duration-500 group-hover:scale-110" />
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -693,19 +731,29 @@ export default function Home() {
                       Sourcing as a Service (SaaS) is an innovative solution offered by Hirextra that transforms how companies find top talent. With SaaS, clients can experience a smooth and efficient sourcing process, driven by AI algorithms and advanced technologies.
                     </p>
                     <ul className="list-disc list-inside space-y-2 text-body">
-                      <li>Automated Resume Sourcing: Our AI-powered system searches through various connected databases and publicly available sources to find potential candidates that meet your requirements</li>
-                      <li>Smart Match and Score: The system assesses and scores resumes based on predefined criteria, ensuring an accurate match with your job specifications.</li>
-                      <li>Direct Calling: After scoring resumes, our system can initiate direct contact with candidates, streamlining communication.</li>
-                      <li>Minimal Human Interaction: SaaS reduces the need for manual intervention, saving time and resources while delivering high-quality results.</li>
+                      <li>Automated resume sourcing across multiple databases and public sources for comprehensive candidate discovery</li>
+                      <li>Intelligent matching and scoring system evaluates resumes against job specifications with precision</li>
+                      <li>Automated direct candidate outreach streamlines communication and accelerates engagement</li>
+                      <li>Minimal manual intervention maximizes efficiency while maintaining high-quality sourcing results</li>
                     </ul>
                     <Link to="/saas" className="link-hover inline-block mt-4 text-brand font-semibold">
                       Learn More →
                     </Link>
                   </div>
                 </div>
-                <div className="grid grid-cols-2 gap-4">
-                  <img src={saas1} alt="SAAS Service" loading="lazy" className="rounded-lg shadow-lg w-full h-40 md:h-52 object-cover transition-transform duration-300 hover:scale-105" />
-                  <img src={saas2} alt="SAAS Service" loading="lazy" className="rounded-lg shadow-lg w-full h-40 md:h-52 object-cover transition-transform duration-300 hover:scale-105" />
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="relative group">
+                    <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/20 to-blue-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+                    <div className="relative rounded-2xl overflow-hidden border-2 border-gradient-to-br from-indigo-200/50 to-blue-200/50 bg-gradient-to-br from-white to-gray-50 p-1 shadow-xl">
+                      <img src={saas1} alt="SAAS Service" loading="lazy" className="w-full h-48 md:h-64 object-cover rounded-xl transition-transform duration-500 group-hover:scale-110" />
+                    </div>
+                  </div>
+                  <div className="relative group">
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-indigo-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+                    <div className="relative rounded-2xl overflow-hidden border-2 border-gradient-to-br from-blue-200/50 to-indigo-200/50 bg-gradient-to-br from-white to-gray-50 p-1 shadow-xl">
+                      <img src={saas2} alt="SAAS Service" loading="lazy" className="w-full h-48 md:h-64 object-cover rounded-xl transition-transform duration-500 group-hover:scale-110" />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

@@ -6,17 +6,7 @@ import logo from "../assets/logo.png";
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-
-  // Handle Scroll Effect
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   // Close mobile menu on route change
   useEffect(() => {
@@ -29,35 +19,9 @@ export default function Navbar() {
   };
 
   const isActive = (path: string) => location.pathname === path;
-  const isHomePage = location.pathname === "/";
-
-  // Dynamic Navbar Styles based on scroll and page
-  const getNavbarClasses = () => {
-    // Base classes
-    let classes = "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ";
-
-    if (isHomePage) {
-      // Homepage logic: Transparent at top, White/Glass when scrolled
-      if (scrolled) {
-        classes += "bg-white/90 backdrop-blur-md text-slate-900 shadow-sm border-gray-200 py-3";
-      } else {
-        // Transparent on top of hero
-        classes += "bg-transparent text-white border-transparent py-5"; 
-      }
-    } else {
-      // Other pages: Always Dark or Light (Let's go with Dark to match your previous upload)
-      classes += "bg-[#0B0F19]/95 backdrop-blur-md text-white border-white/10 shadow-md py-3";
-    }
-    return classes;
-  };
-
-  // Helper for text colors during scroll
-  const linkClass = isHomePage && !scrolled ? "hover:text-blue-300" : "hover:text-blue-600";
-  const iconClass = isHomePage && !scrolled ? "text-white" : "text-slate-600";
-  const logoHeight = scrolled ? "h-10" : "h-12";
 
   return (
-    <nav className={getNavbarClasses()}>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0B0F19]/95 backdrop-blur-md text-white border-b border-white/10 shadow-md py-3">
       <div className="container mx-auto px-4 lg:px-6">
         <div className="flex items-center justify-between">
           
@@ -66,7 +30,7 @@ export default function Navbar() {
             <img 
               src={logo} 
               alt="Hirextra" 
-              className={`${logoHeight} w-auto transition-all duration-300`} 
+              className="h-12 w-auto transition-all duration-300" 
             />
           </Link>
 
@@ -79,7 +43,7 @@ export default function Navbar() {
               onMouseEnter={() => setOpenDropdown("platform")}
               onMouseLeave={() => setOpenDropdown(null)}
             >
-              <button className={`flex items-center gap-1 font-medium text-[15px] transition-colors ${linkClass}`}>
+              <button className="flex items-center gap-1 font-medium text-[15px] text-white hover:text-blue-300 transition-colors">
                 Platform <ChevronDown className="w-4 h-4 opacity-70 group-hover:rotate-180 transition-transform duration-300" />
               </button>
               
@@ -101,7 +65,7 @@ export default function Navbar() {
               onMouseEnter={() => setOpenDropdown("partners")}
               onMouseLeave={() => setOpenDropdown(null)}
             >
-              <button className={`flex items-center gap-1 font-medium text-[15px] transition-colors ${linkClass}`}>
+              <button className="flex items-center gap-1 font-medium text-[15px] text-white hover:text-blue-300 transition-colors">
                 Partners <ChevronDown className="w-4 h-4 opacity-70 group-hover:rotate-180 transition-transform duration-300" />
               </button>
               <div className={`absolute top-full left-1/2 -translate-x-1/2 pt-4 transition-all duration-200 ${openDropdown === "partners" ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"}`}>
@@ -121,7 +85,7 @@ export default function Navbar() {
               href="https://talanton.ai/"
               target="_blank"
               rel="noreferrer"
-              className={`flex items-center gap-1 font-medium text-[15px] transition-colors ${linkClass}`}
+              className="flex items-center gap-1 font-medium text-[15px] text-white hover:text-blue-300 transition-colors"
             >
               Autonomous AI Agents <ExternalLink className="w-3 h-3 opacity-60" />
             </a>
@@ -132,7 +96,7 @@ export default function Navbar() {
               onMouseEnter={() => setOpenDropdown("services")}
               onMouseLeave={() => setOpenDropdown(null)}
             >
-              <button className={`flex items-center gap-1 font-medium text-[15px] transition-colors ${linkClass}`}>
+              <button className="flex items-center gap-1 font-medium text-[15px] text-white hover:text-blue-300 transition-colors">
                 Services <ChevronDown className="w-4 h-4 opacity-70 group-hover:rotate-180 transition-transform duration-300" />
               </button>
               <div className={`absolute top-full left-1/2 -translate-x-1/2 pt-4 transition-all duration-200 ${openDropdown === "services" ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"}`}>
@@ -162,7 +126,7 @@ export default function Navbar() {
               onMouseEnter={() => setOpenDropdown("solutions")}
               onMouseLeave={() => setOpenDropdown(null)}
             >
-              <button className={`flex items-center gap-1 font-medium text-[15px] transition-colors ${linkClass}`}>
+              <button className="flex items-center gap-1 font-medium text-[15px] text-white hover:text-blue-300 transition-colors">
                 Solutions <ChevronDown className="w-4 h-4 opacity-70 group-hover:rotate-180 transition-transform duration-300" />
               </button>
               <div className={`absolute top-full left-1/2 -translate-x-1/2 pt-4 transition-all duration-200 ${openDropdown === "solutions" ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"}`}>
@@ -187,9 +151,7 @@ export default function Navbar() {
               target="_blank"
               rel="noreferrer"
               className={`text-sm font-medium px-4 py-2.5 rounded-lg transition-all ${
-                 isHomePage && !scrolled 
-                 ? "text-white hover:bg-white/10 border border-white/30" 
-                 : "text-slate-700 hover:bg-slate-100 border border-slate-200"
+                "text-white hover:bg-white/10 border border-white/30" 
               }`}
             >
               Signup for Agency Recruiter
@@ -199,9 +161,7 @@ export default function Navbar() {
               target="_blank"
               rel="noreferrer"
               className={`text-sm font-medium px-4 py-2.5 rounded-lg transition-all ${
-                 isHomePage && !scrolled 
-                 ? "text-white hover:bg-white/10 border border-white/30" 
-                 : "text-slate-700 hover:bg-slate-100 border border-slate-200"
+                 "text-white hover:bg-white/10 border border-white/30" 
               }`}
             >
               Signup for Employer
@@ -217,9 +177,7 @@ export default function Navbar() {
 
           {/* --- MOBILE TOGGLE --- */}
           <button
-            className={`lg:hidden p-2 rounded-md transition-colors ${
-              isHomePage && !scrolled ? "hover:bg-white/10 text-white" : "hover:bg-gray-100 text-slate-800"
-            }`}
+            className="lg:hidden p-2 rounded-md transition-colors hover:bg-white/10 text-white"
             onClick={() => setMobileMenuOpen(true)}
             aria-label="Open menu"
           >
