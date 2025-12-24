@@ -1,5 +1,5 @@
 import { useState, useRef } from "react"
-import { Link } from "react-router-dom"
+// import { Link } from "react-router-dom"
 import ReCAPTCHA from "react-google-recaptcha"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
@@ -166,6 +166,7 @@ export default function BookADemo() {
                   <ReCAPTCHA
                     ref={recaptchaRef}
                     sitekey="6LciWC8sAAAAANlYmO4NYJpjv5aUOeTEIHHegAl5"
+                    
                     onChange={handleRecaptchaChange}
                   />
                 </div>

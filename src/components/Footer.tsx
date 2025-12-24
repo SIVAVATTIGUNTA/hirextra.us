@@ -170,8 +170,8 @@ export default function Footer() {
                   +1 (470) 625 3092
                 </a>
                 {", "}
-                <a href="mailto:salesus@hirextra.com" className="hover:text-brand transition-colors">
-                  salesus@hirextra.com
+                <a href="mailto:salesus@hirextra.us" className="hover:text-brand transition-colors">
+                  salesus@hirextra.us
                 </a>
               </p>
             </div>
@@ -184,7 +184,7 @@ export default function Footer() {
         {/* Copyright */}
         <div>
           <p className="text-center text-sm opacity-60">
-            Copyright © 2017 - 2024 HireXtra.com All rights reserved. <br />
+            Copyright © 2017 - 2024 HireXtra.us All rights reserved. <br />
             Developed & Managed by @ Asna Hirextra Private Limited - India
           </p>
         </div>
