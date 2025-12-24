@@ -1,4 +1,4 @@
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import { Link } from "react-router-dom"
 import ReCAPTCHA from "react-google-recaptcha"
 import Navbar from "../components/Navbar"
@@ -46,6 +46,31 @@ import clientGenpact from "../assets/images/client-genpact.jpg"
 import multitasking from "../assets/images/multitasking.svg"
 import peopleData from "../assets/images/people-data.webp"
 
+
+const heroImages = [
+  {
+    src: directSourcingHero,
+    alt: "AI-powered direct sourcing for talent acquisition"
+  },
+  {
+    src: dataSet,
+    alt: "World's largest people data set for recruitment"
+  },
+  {
+    src: peopleData,
+    alt: "People data analytics and insights"
+  },
+  {
+    src: recruitingTechnology,
+    alt: "Advanced recruiting technology platform"
+  },
+  {
+    src: contingentWorkers,
+    alt: "Contingent workforce management solutions"
+  }
+]
+
+
 export default function Home() {
   const [recaptchaValue, setRecaptchaValue] = useState<string | null>(null)
   const recaptchaRef = useRef<ReCAPTCHA>(null)
@@ -59,7 +84,7 @@ export default function Home() {
     // Handle form submission here
     console.log("Form submitted with reCAPTCHA token:", recaptchaValue)
   }
-  const handleNavigation = (path:any) => {
+  const handleNavigation = (path: any) => {
     // OPTION 1: Standard Window Navigation
     window.location.href = path;
 
@@ -74,175 +99,178 @@ export default function Home() {
     setRecaptchaValue(value)
   }
 
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length)
+    }, 2000)
+
+    return () => clearInterval(interval)
+  }, [])
+
+
   return (
     <>
       <Navbar />
 
-<section className="relative bg-[#0B0F19] text-white overflow-hidden min-h-screen flex flex-col justify-center">
+      <section className="relative bg-[#0B0F19] text-white overflow-hidden min-h-screen flex flex-col justify-center">
 
-      {/* --- BACKGROUND EFFECTS --- */}
-      
-      {/* 1. Subtle Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
+        {/* --- BACKGROUND EFFECTS --- */}
 
-      {/* 2. Soft Animated Glows */}
-      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute -top-[10%] -left-[10%] w-[600px] h-[600px] bg-blue-600/20 rounded-full blur-[100px] opacity-50 animate-pulse" />
-        <div className="absolute top-[20%] -right-[10%] w-[500px] h-[500px] bg-purple-600/15 rounded-full blur-[100px] opacity-50" />
-      </div>
+        {/* 1. Subtle Grid Pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
 
-      {/* --- CONTENT CONTAINER --- */}
-      <div className="container mx-auto px-6 pt-32 pb-20 relative z-10">
-        <div className="max-w-7xl mx-auto">
-
-          {/* MAIN GRID */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-
-            {/* LEFT CONTENT */}
-            <div className="space-y-8 text-center lg:text-left">
-
-              {/* Eyebrow Badge */}
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-                </span>
-                <span className="text-xs font-semibold tracking-wider uppercase text-blue-100/80">
-                  AI-Powered Staffing Platform
-                </span>
-              </div>
-
-              {/* Headline */}
-              <h1 className="font-extrabold leading-[1.1] tracking-tight text-white"
-                style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}
-              >
-                The World’s First <br className="hidden md:block" />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-emerald-400">
-                  AI Staffing Aggregator
-                </span>
-              </h1>
-
-              {/* Description */}
-              <p className="text-slate-300 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                HireXtra intelligently connects employers with the right recruitment agencies—faster, smarter, and at global scale using autonomous AI agents.
-              </p>
-
-              {/* AI + HI = ROI Formula */}
-              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-white/10 backdrop-blur-sm mt-4">
-                <span className="text-2xl font-bold text-white">AI</span>
-                <span className="text-xl text-slate-300">+</span>
-                <span className="text-2xl font-bold text-white">HI</span>
-                <span className="text-xl text-slate-300">=</span>
-                <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-400">ROI</span>
-              </div>
-
-              {/* CTA BUTTONS */}
-              <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start pt-2">
-                
-                {/* Primary Button */}
-                <button
-                  onClick={() => handleNavigation('/platform-overview')}
-                  className="group relative px-8 py-4 rounded-full bg-blue-600 text-white font-semibold text-lg overflow-hidden transition-all hover:scale-105 shadow-lg shadow-blue-500/25 w-full sm:w-auto"
-                >
-                  <div className="absolute inset-0 bg-white/20 group-hover:translate-x-full transition-transform duration-500 ease-out -skew-x-12 -translate-x-full" />
-                  <span className="flex items-center justify-center gap-2">
-                    Get Started <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </span>
-                </button>
-
-                {/* Secondary Button */}
-                <button
-                  onClick={() => handleNavigation('/book-a-demo')}
-                  className="group px-8 py-4 rounded-full border border-white/20 bg-white/5 text-white font-semibold text-lg hover:bg-white/10 hover:border-white/40 transition-all w-full sm:w-auto"
-                >
-                  <span className="flex items-center justify-center gap-2">
-                    <PlayCircle className="w-5 h-5 text-blue-400" /> Book a Demo
-                  </span>
-                </button>
-              </div>
-            </div>
-
-            {/* RIGHT IMAGE (With Floating Effect) */}
-           {/* RIGHT IMAGE SECTION */}
-<div className="relative flex justify-center lg:justify-end items-center group">
-  
-  {/* 1. Background Glow - Creates that "AI energy" look behind the image */}
-  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-blue-500/10 rounded-full blur-[120px] pointer-events-none group-hover:bg-blue-500/20 transition-all duration-700"></div>
-
-  {/* 2. Image Container with subtle border glow */}
-  <div className="relative z-10 p-2 rounded-[2.5rem] bg-gradient-to-b from-white/10 to-transparent backdrop-blur-sm border border-white/10 shadow-2xl overflow-hidden transform hover:scale-[1.02] transition-transform duration-500">
-    
-    <img
-      src={recruitingTechnology}
-      alt="AI recruitment technology"
-      loading="lazy"
-      className="w-full max-w-sm md:max-w-md lg:max-w-lg 
-        rounded-[2rem] 
-        object-cover 
-        opacity-90 
-        brightness-110
-        contrast-110
-        group-hover:opacity-100 transition-opacity"
-      style={{
-        /* This filter helps blend the image edges if your image has a dark background */
-        maskImage: 'linear-gradient(to bottom, black 90%, transparent 100%)',
-        WebkitMaskImage: 'linear-gradient(to bottom, black 90%, transparent 100%)',
-      }}
-    />
-
-    {/* 3. Overlays for extra "Tech" feel */}
-    <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F19] via-transparent to-transparent opacity-40"></div>
-    <div className="absolute inset-0 border-[1px] border-white/5 rounded-[2rem] pointer-events-none"></div>
-  </div>
-
-  {/* 4. Floating Decorative Elements (Optional) */}
-  <div className="absolute -top-4 -right-4 w-20 h-20 bg-blue-400/20 blur-2xl rounded-full animate-pulse"></div>
-  <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-purple-500/10 blur-3xl rounded-full"></div>
-</div>
-
-          </div>
-
-          {/* FEATURES SECTION */}
-          <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 text-center lg:text-left">
-            
-            {/* Feature 1 */}
-            <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.06] transition-colors duration-300">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-blue-500/10 text-blue-400 mb-4 mx-auto lg:mx-0">
-                <Sparkles className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-bold text-white mb-2">Intelligent Matching</h3>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                AI connects employers with the most relevant recruitment agencies instantly.
-              </p>
-            </div>
-
-            {/* Feature 2 */}
-            <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.06] transition-colors duration-300">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-purple-500/10 text-purple-400 mb-4 mx-auto lg:mx-0">
-                <Globe className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-bold text-white mb-2">Global Reach</h3>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                Access a worldwide network of specialized agency recruiters in seconds.
-              </p>
-            </div>
-
-            {/* Feature 3 */}
-            <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.06] transition-colors duration-300">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-emerald-500/10 text-emerald-400 mb-4 mx-auto lg:mx-0">
-                <Bot className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-bold text-white mb-2">Autonomous AI Agents</h3>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                Automate your entire hiring workflow with intelligent decision engines.
-              </p>
-            </div>
-
-          </div>
-
+        {/* 2. Soft Animated Glows */}
+        <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+          <div className="absolute -top-[10%] -left-[10%] w-[600px] h-[600px] bg-blue-600/20 rounded-full blur-[100px] opacity-50 animate-pulse" />
+          <div className="absolute top-[20%] -right-[10%] w-[500px] h-[500px] bg-purple-600/15 rounded-full blur-[100px] opacity-50" />
         </div>
-      </div>
-    </section>
+
+        {/* --- CONTENT CONTAINER --- */}
+        <div className="container mx-auto px-6 pt-32 pb-20 relative z-10">
+          <div className="max-w-7xl mx-auto">
+
+            {/* MAIN GRID */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+              {/* LEFT CONTENT */}
+              <div className="space-y-8 text-center lg:text-left">
+
+                {/* Eyebrow Badge */}
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                  </span>
+                  <span className="text-xs font-semibold tracking-wider uppercase text-blue-100/80">
+                    AI-Powered Staffing Platform
+                  </span>
+                </div>
+
+                {/* Headline */}
+                <h1 className="font-extrabold leading-[1.1] tracking-tight text-white"
+                  style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}
+                >
+                  The World’s First <br className="hidden md:block" />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-emerald-400">
+                    AI Staffing Aggregator
+                  </span>
+                </h1>
+
+                {/* Description */}
+                <p className="text-slate-300 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                  HireXtra intelligently connects employers with the right recruitment agencies—faster, smarter, and at global scale using autonomous AI agents.
+                </p>
+
+                {/* AI + HI = ROI Formula */}
+                <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-white/10 backdrop-blur-sm mt-4">
+                  <span className="text-2xl font-bold text-white">AI</span>
+                  <span className="text-xl text-slate-300">+</span>
+                  <span className="text-2xl font-bold text-white">HI</span>
+                  <span className="text-xl text-slate-300">=</span>
+                  <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-400">ROI</span>
+                </div>
+
+                {/* CTA BUTTONS */}
+                <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start pt-2">
+
+                  {/* Primary Button */}
+                  <button
+                    onClick={() => handleNavigation('/platform-overview')}
+                    className="group relative px-8 py-4 rounded-full bg-blue-600 text-white font-semibold text-lg overflow-hidden transition-all hover:scale-105 shadow-lg shadow-blue-500/25 w-full sm:w-auto"
+                  >
+                    <div className="absolute inset-0 bg-white/20 group-hover:translate-x-full transition-transform duration-500 ease-out -skew-x-12 -translate-x-full" />
+                    <span className="flex items-center justify-center gap-2">
+                      Get Started <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </button>
+
+                  {/* Secondary Button */}
+                  <button
+                    onClick={() => handleNavigation('/book-a-demo')}
+                    className="group px-8 py-4 rounded-full border border-white/20 bg-white/5 text-white font-semibold text-lg hover:bg-white/10 hover:border-white/40 transition-all w-full sm:w-auto"
+                  >
+                    <span className="flex items-center justify-center gap-2">
+                      <PlayCircle className="w-5 h-5 text-blue-400" /> Book a Demo
+                    </span>
+                  </button>
+                </div>
+              </div>
+
+              {/* RIGHT IMAGE (With Floating Effect) */}
+              {/* RIGHT IMAGE SECTION */}
+              <div className="relative flex justify-center lg:justify-end items-center group">
+
+                {/* 1. Background Glow - Creates that "AI energy" look behind the image */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-blue-500/10 rounded-full blur-[120px] pointer-events-none group-hover:bg-blue-500/20 transition-all duration-700"></div>
+
+                {/* 2. Image Container with subtle border glow */}
+                <div className="relative z-10 p-2 rounded-[2.5rem] bg-gradient-to-b from-white/10 to-transparent backdrop-blur-sm border border-white/10 shadow-2xl overflow-hidden transform hover:scale-[1.02] transition-transform duration-500">
+                  <div className="w-[400px] h-[400px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] rounded-[2rem] overflow-hidden">
+                    <img
+                      key={currentImageIndex}
+                      src={heroImages[currentImageIndex].src}
+                      alt={heroImages[currentImageIndex].alt}
+                      loading="eager"
+                      className="w-full h-full rounded-[2rem] object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-700 ease-in-out"
+                    />
+                  </div>
+
+                  {/* 3. Overlays for extra "Tech" feel */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F19] via-transparent to-transparent opacity-40"></div>
+                  <div className="absolute inset-0 border-[1px] border-white/5 rounded-[2rem] pointer-events-none"></div>
+                </div>
+
+                {/* 4. Floating Decorative Elements (Optional) */}
+                <div className="absolute -top-4 -right-4 w-20 h-20 bg-blue-400/20 blur-2xl rounded-full animate-pulse"></div>
+                <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-purple-500/10 blur-3xl rounded-full"></div>
+              </div>
+
+            </div>
+
+            {/* FEATURES SECTION */}
+            <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 text-center lg:text-left">
+
+              {/* Feature 1 */}
+              <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.06] transition-colors duration-300">
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-blue-500/10 text-blue-400 mb-4 mx-auto lg:mx-0">
+                  <Sparkles className="w-6 h-6" />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">Intelligent Matching</h3>
+                <p className="text-slate-400 text-sm leading-relaxed">
+                  AI connects employers with the most relevant recruitment agencies instantly.
+                </p>
+              </div>
+
+              {/* Feature 2 */}
+              <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.06] transition-colors duration-300">
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-purple-500/10 text-purple-400 mb-4 mx-auto lg:mx-0">
+                  <Globe className="w-6 h-6" />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">Global Reach</h3>
+                <p className="text-slate-400 text-sm leading-relaxed">
+                  Access a worldwide network of specialized agency recruiters in seconds.
+                </p>
+              </div>
+
+              {/* Feature 3 */}
+              <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.06] transition-colors duration-300">
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-emerald-500/10 text-emerald-400 mb-4 mx-auto lg:mx-0">
+                  <Bot className="w-6 h-6" />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">Autonomous AI Agents</h3>
+                <p className="text-slate-400 text-sm leading-relaxed">
+                  Automate your entire hiring workflow with intelligent decision engines.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
 
       {/* Engage with Top Talent Section */}
       <section className="py-20 bg-light fade-in">
