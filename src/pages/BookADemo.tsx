@@ -29,6 +29,8 @@ import clientGenpact from "../assets/images/client-genpact.jpg"
 
 export default function BookADemo() {
   const [recaptchaValue, setRecaptchaValue] = useState<string | null>(null)
+
+
   const recaptchaRef = useRef<ReCAPTCHA>(null)
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -40,6 +42,9 @@ export default function BookADemo() {
     // Handle form submission here
     console.log("Form submitted with reCAPTCHA token:", recaptchaValue)
     alert("Thank you! We'll be in touch soon to schedule your demo.")
+
+    recaptchaRef.current?.reset()
+
   }
 
   const handleRecaptchaChange = (value: string | null) => {
@@ -163,12 +168,11 @@ export default function BookADemo() {
                 </div>
 
                 <div className="flex justify-center">
-                  <ReCAPTCHA
-                    ref={recaptchaRef}
-                    sitekey="6LciWC8sAAAAANlYmO4NYJpjv5aUOeTEIHHegAl5"
-                    
-                    onChange={handleRecaptchaChange}
-                  />
+                   <ReCAPTCHA
+      ref={recaptchaRef}
+      sitekey="6LfDlT4UAAAAABkGFTbE1n5xSwVLc4bFFR9JFG8P"
+      onChange={handleRecaptchaChange}
+    />
                 </div>
 
                 <div className="pt-4">

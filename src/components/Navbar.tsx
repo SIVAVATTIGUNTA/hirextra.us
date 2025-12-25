@@ -206,7 +206,7 @@ export default function Navbar() {
               to="/book-a-demo"
               className="h-9 px-5 flex items-center justify-center rounded-md bg-blue-600 text-[13px] font-semibold text-white hover:bg-blue-700 shadow-sm transition-colors"
             >
-              Book a Demo
+              Request Interest
             </Link>
           </div>
 
