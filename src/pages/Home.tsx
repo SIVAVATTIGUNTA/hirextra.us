@@ -46,6 +46,35 @@ import clientGenpact from "../assets/images/client-genpact.jpg"
 import multitasking from "../assets/images/multitasking.svg"
 import peopleData from "../assets/images/people-data.webp"
 
+const CLIENTS = {
+  india: [
+    client2day3,
+    clientPickzy,
+    client2day4,
+    clientAlicesoft,
+    clientHexaware,
+    clientSyntel,
+    clientGenpact,
+  ],
+  uk: [
+    clientValueonshore,
+    clientMagnit,
+    clientPhoton,
+    clientSaxus,
+    clientCli1,
+    clientCli2,
+  ],
+  us: [
+    client1234,
+    client12341,
+    client12342,
+    client123457,
+    client12345678,
+    client123456789,
+    clientCli4,
+    clientCli5,
+  ],
+};
 
 const heroImages = [
   {
@@ -74,6 +103,8 @@ const heroImages = [
 export default function Home() {
   const [recaptchaValue, setRecaptchaValue] = useState<string | null>(null)
   const recaptchaRef = useRef<ReCAPTCHA>(null)
+  const [activeClients, setActiveClients] = useState<"india" | "uk" | "us">("india");
+
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -292,119 +323,124 @@ export default function Home() {
       </section>
 
       {/* Who we are Section */}
-      <section className="py-20 bg-white fade-in" id="who-we-are">
+      <section className="py-24 bg-white" id="who-we-are">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
-            <div className="grid md:grid-cols-3 gap-8 mb-16">
-              <div className="md:col-span-2">
-                <h2 className="font-heading text-4xl md:text-5xl mb-6 text-dark">
-                  Who we are?
-                </h2>
-                <p className="text-lg text-body mb-6">
-                  As the world's pioneering staffing aggregator, Hirextra transforms recruitment by linking employers with Staffing Agency Recruiters worldwide. Our intelligent platform provides instant access to top talent resources, streamlining the hiring process.
-                </p>
-                <a
-                  href="https://www.hirextra.com/compare/compare_us1.php"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="link-hover inline-flex items-center text-brand font-semibold"
-                >
-                  Learn More
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </a>
-              </div>
-              <div className="flex justify-center">
+
+            {/* CENTERED HEADER */}
+            <div className="max-w-4xl mx-auto text-center mb-20">
+              <h2 className="font-heading text-4xl md:text-5xl text-dark mb-6 leading-tight">
+                Who We Are
+              </h2>
+              <p className="text-lg text-body leading-relaxed">
+                HireXtra is a global AI-powered staffing aggregator transforming recruitment
+                by connecting employers with verified staffing agency recruiters worldwide.
+                Our intelligent platform simplifies hiring, accelerates access to talent,
+                and delivers measurable, cost-effective outcomes.
+              </p>
+            </div>
+
+            {/* MAIN CONTENT */}
+            <div className="grid lg:grid-cols-12 gap-16 items-start">
+
+              {/* IMAGE */}
+              <div className="lg:col-span-5 flex justify-center">
                 <img
                   src={whoWeAre}
-                  alt=""
+                  alt="HireXtra AI recruitment platform"
                   loading="lazy"
-                  className="w-full max-w-md h-auto max-h-96 rounded-lg object-cover"
+                  className="w-full max-w-xl rounded-2xl object-cover shadow-lg"
                 />
               </div>
-            </div>
 
-            {/* Features Grid */}
-            <div className="grid md:grid-cols-3 gap-8">
-              <div>
-                <div className="flex items-start mb-4">
-                  <svg className="w-8 h-8 text-brand mr-4 mt-1" fill="currentColor" viewBox="0 0 640 512">
-                    <path d="M96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3z" />
-                  </svg>
-                  <div>
-                    <h5 className="font-heading text-xl mb-2 text-dark">Dedicated Account Manager Support</h5>
-                    <p className="text-body">
-                      Our dedicated Account Manager Support ensures that you receive personalized assistance tailored to your unique needs
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start mb-4">
-                  <svg className="w-8 h-8 text-brand mr-4 mt-1" fill="currentColor" viewBox="0 0 576 512">
-                    <path d="M565.6 36.2C572.1 40.7 576 48.1 576 56V392c0 10-6.2 18.9-15.5 22.4l-168 64c-5.2 2-10.9 2.1-16.1 .3L192.5 417.5l-160 61c-7.4 2.8-15.7 1.8-22.2-2.7S0 463.9 0 456V120c0-10 6.1-18.9 15.5-22.4l168-64c5.2-2 10.9-2.1 16.1-.3L383.5 94.5l160-61c7.4-2.8 15.7-1.8 22.2 2.7z" />
-                  </svg>
-                  <div>
-                    <h5 className="font-heading text-xl mb-2 text-dark">Instant Pipeline</h5>
-                    <p className="text-body">
-                      Our innovative platform instantly matches employers to specified recruiters around the world to meet urgent hiring need.
-                    </p>
-                  </div>
-                </div>
-              </div>
+              {/* FEATURES */}
+              <div className="lg:col-span-7 space-y-10">
 
-              <div>
-                <div className="flex items-start mb-4">
-                  <svg className="w-8 h-8 text-brand mr-4 mt-1" fill="currentColor" viewBox="0 0 640 512">
-                    <path d="M168.2 384.9c-15-5.4-31.7-3.1-44.6 6.4c-8.2 6-22.3 14.8-39.4 22.7c5.6-14.7 9.9-31.3 11.3-49.4c1-12.9-3.3-25.7-11.8-35.5C60.4 302.8 48 272 48 240c0-79.5 83.3-160 208-160s208 80.5 208 160s-83.3 160-208 160c-31.6 0-61.3-5.5-87.8-15.1z" />
-                  </svg>
+                <div className="grid sm:grid-cols-2 gap-10">
                   <div>
-                    <h5 className="font-heading text-xl mb-2 text-dark">AI Platform with 23 IPR's</h5>
-                    <p className="text-body">
-                      Provides a space that connects agency recruiters and employers.
+                    <h4 className="text-xl font-semibold text-dark mb-2">
+                      Personalized Account Manager Support
+                    </h4>
+                    <p className="text-body leading-relaxed">
+                      Dedicated account managers ensure seamless onboarding, proactive
+                      communication, and recruitment strategies aligned with your business goals.
                     </p>
                   </div>
-                </div>
-                <div className="flex items-start mb-4">
-                  <svg className="w-8 h-8 text-brand mr-4 mt-1" fill="currentColor" viewBox="0 0 640 512">
-                    <path d="M168.2 384.9c-15-5.4-31.7-3.1-44.6 6.4c-8.2 6-22.3 14.8-39.4 22.7c5.6-14.7 9.9-31.3 11.3-49.4c1-12.9-3.3-25.7-11.8-35.5C60.4 302.8 48 272 48 240c0-79.5 83.3-160 208-160s208 80.5 208 160s-83.3 160-208 160c-31.6 0-61.3-5.5-87.8-15.1z" />
-                  </svg>
-                  <div>
-                    <h5 className="font-heading text-xl mb-2 text-dark">Pre-Hire Measures and Post-Hire Measures</h5>
-                    <p className="text-body">
-                      Our comprehensive Pre-Hire Measures ensure top talent selection through rigorous screening and assessments, while our Post-Hire Measures support retention and development with effective onboarding and continuous performance tracking.
-                    </p>
-                  </div>
-                </div>
-              </div>
 
-              <div>
-                <div className="flex items-start mb-4">
-                  <svg className="w-8 h-8 text-brand mr-4 mt-1" fill="currentColor" viewBox="0 0 512 512">
-                    <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z" />
-                  </svg>
                   <div>
-                    <h5 className="font-heading text-xl mb-2 text-dark">Cost Efficiency</h5>
-                    <p className="text-body">
-                      By aggregating the best recruiters globally, hirextra provides employers access to top-tier talent at a fraction of the cost.
+                    <h4 className="text-xl font-semibold text-dark mb-2">
+                      Instant Global Talent Pipeline
+                    </h4>
+                    <p className="text-body leading-relaxed">
+                      Instantly connect with recruiters across regions to meet urgent hiring
+                      demands with speed and precision.
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start mb-4">
-                  <svg className="w-8 h-8 text-brand mr-4 mt-1" fill="currentColor" viewBox="0 0 512 512">
-                    <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z" />
-                  </svg>
+
+                <div className="grid sm:grid-cols-2 gap-10">
                   <div>
-                    <h5 className="font-heading text-xl mb-2 text-dark">Effective Solutions (4 hours First Resume)</h5>
-                    <p className="text-body">
-                      Ensures every hiring requirement is fulfilled effectively
+                    <h4 className="text-xl font-semibold text-dark mb-2">
+                      AI-Driven Platform with 23 IPRs
+                    </h4>
+                    <p className="text-body leading-relaxed">
+                      Proprietary AI technology powers intelligent recruiter–employer matching
+                      and automated hiring workflows.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="text-xl font-semibold text-dark mb-2">
+                      Pre-Hire & Post-Hire Excellence
+                    </h4>
+                    <p className="text-body leading-relaxed">
+                      From screening to onboarding and performance tracking, we ensure long-term
+                      hiring success across the talent lifecycle.
                     </p>
                   </div>
                 </div>
+
+                <div className="pt-6 border-t border-gray-200">
+                  <h4 className="text-xl font-semibold text-dark mb-2">
+                    Fast & Cost-Effective Hiring Outcomes
+                  </h4>
+                  <p className="text-body leading-relaxed max-w-xl">
+                    Optimized costs and rapid first-resume delivery help you hire quality
+                    talent faster and smarter.
+                  </p>
+                </div>
+
               </div>
             </div>
+
+            {/* CENTERED CTA */}
+            <div className="mt-20 text-center">
+              <a
+                href="https://www.hirextra.com/compare/compare_us.php"
+                target="_blank"
+                rel="noreferrer"
+                className="
+            inline-block
+            px-12 py-4
+            rounded-full
+            bg-brand
+            text-white
+            font-semibold
+            text-base
+            hover:bg-brand-dark
+            transition-colors
+          "
+              >
+                Learn More About HireXtra
+              </a>
+            </div>
+
           </div>
         </div>
       </section>
+
+
+
 
       {/* Direct Sourcing Section */}
       <section className="py-20 bg-light" id="grow-your-talent-pool">
@@ -1055,9 +1091,12 @@ export default function Home() {
       </section>
 
       {/* Our Clients Section */}
-      <section className="py-20 bg-light fade-in" id="Our-Clients">
+      {/* Our Clients Section */}
+      <section className="py-20 bg-light" id="Our-Clients">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
+
+            {/* Header */}
             <div className="mb-12">
               <h3 className="font-heading text-3xl md:text-4xl mb-4 text-dark">
                 Our Clients
@@ -1067,74 +1106,96 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid grid-cols-3 md:grid-cols-6 gap-8">
-              <div className="flex items-center justify-center">
-                <img src={client2day3} alt="Client" loading="lazy" className="w-full h-16 md:h-20 object-contain opacity-70 hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="flex items-center justify-center">
-                <img src={clientPickzy} alt="Client" loading="lazy" className="w-full h-16 md:h-20 object-contain opacity-70 hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="flex items-center justify-center">
-                <img src={client2day4} alt="Client" loading="lazy" className="w-full h-16 md:h-20 object-contain opacity-70 hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="flex items-center justify-center">
-                <img src={clientAlicesoft} alt="Client" loading="lazy" className="w-full h-16 md:h-20 object-contain opacity-70 hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="flex items-center justify-center">
-                <img src={clientHexaware} alt="Client" loading="lazy" className="w-full h-16 md:h-20 object-contain opacity-70 hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="flex items-center justify-center">
-                <img src={clientValueonshore} alt="Client" loading="lazy" className="w-full h-16 md:h-20 object-contain opacity-70 hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="flex items-center justify-center">
-                <img src={client1234} alt="Client" loading="lazy" className="w-full h-16 md:h-20 object-contain opacity-70 hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="flex items-center justify-center">
-                <img src={client12341} alt="Client" loading="lazy" className="w-full h-16 md:h-20 object-contain opacity-70 hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="flex items-center justify-center">
-                <img src={client12342} alt="Client" loading="lazy" className="w-full h-16 md:h-20 object-contain opacity-70 hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="flex items-center justify-center">
-                <img src={client123457} alt="Client" loading="lazy" className="w-full h-16 md:h-20 object-contain opacity-70 hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="flex items-center justify-center">
-                <img src={clientMagnit} alt="Client" loading="lazy" className="w-full h-16 md:h-20 object-contain opacity-70 hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="flex items-center justify-center">
-                <img src={clientPhoton} alt="Client" loading="lazy" className="w-full h-16 md:h-20 object-contain opacity-70 hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="flex items-center justify-center">
-                <img src={client12345678} alt="Client" loading="lazy" className="w-full h-16 md:h-20 object-contain opacity-70 hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="flex items-center justify-center">
-                <img src={clientCli1} alt="Client" loading="lazy" className="w-full h-16 md:h-20 object-contain opacity-70 hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="flex items-center justify-center">
-                <img src={clientCli2} alt="Client" loading="lazy" className="w-full h-16 md:h-20 object-contain opacity-70 hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="flex items-center justify-center">
-                <img src={client123456789} alt="Client" loading="lazy" className="w-full h-16 md:h-20 object-contain opacity-70 hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="flex items-center justify-center">
-                <img src={clientCli4} alt="Client" loading="lazy" className="w-full h-16 md:h-20 object-contain opacity-70 hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="flex items-center justify-center">
-                <img src={clientCli5} alt="Client" loading="lazy" className="w-full h-16 md:h-20 object-contain opacity-70 hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="flex items-center justify-center">
-                <img src={clientSaxus} alt="Client" loading="lazy" className="w-full h-16 md:h-20 object-contain opacity-70 hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="flex items-center justify-center">
-                <img src={clientSyntel} alt="Client" loading="lazy" className="w-full h-16 md:h-20 object-contain opacity-70 hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="flex items-center justify-center">
-                <img src={clientGenpact} alt="Client" loading="lazy" className="w-full h-16 md:h-20 object-contain opacity-70 hover:opacity-100 transition-opacity" />
-              </div>
+            {/* Tabs */}
+            <div className="flex flex-wrap gap-3 mb-10">
+              {[
+                { key: "india", label: "Indian Clients" },
+                { key: "uk", label: "UK Clients" },
+                { key: "us", label: "US Clients" },
+              ].map((tab) => (
+                <button
+                  key={tab.key}
+                  onClick={() => setActiveClients(tab.key as "india" | "uk" | "us")}
+                  className={`
+              px-5 py-2.5 rounded-full text-sm font-semibold
+              transition-all duration-300
+              ${activeClients === tab.key
+                      ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg"
+                      : "bg-white text-slate-600 hover:bg-slate-100"
+                    }
+            `}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+
+            {/* Client Grid */}
+            <div
+              key={activeClients}
+              className="
+          grid gap-6
+          grid-cols-2
+          sm:grid-cols-3
+          md:grid-cols-4
+          lg:grid-cols-6
+          animate-[fadeIn_0.35s_ease-in-out]
+        "
+            >
+              {CLIENTS[activeClients].map((logo, index) => (
+                <div
+                  key={index}
+                  className="
+              group relative
+              flex items-center justify-center
+              bg-white
+              border border-slate-200
+              rounded-xl
+              p-6
+              shadow-sm
+              transition-all duration-300
+              hover:-translate-y-1
+              hover:shadow-xl
+            "
+                >
+                  <span
+                    className="
+                absolute bottom-0 left-1/2 -translate-x-1/2
+                h-[3px] w-0
+                bg-gradient-to-r from-blue-500 to-indigo-500
+                transition-all duration-300
+                group-hover:w-2/3
+                rounded-full
+              "
+                  />
+                  <img
+                    src={logo}
+                    alt="Client"
+                    loading="lazy"
+                    className="h-14 md:h-16 object-contain opacity-70 group-hover:opacity-100 transition-opacity"
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>
+
+        <style>
+          {`
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    `}
+        </style>
       </section>
+
 
       {/* Statistics Section */}
       <section className="py-20 bg-light">
