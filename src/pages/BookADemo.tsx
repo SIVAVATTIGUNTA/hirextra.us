@@ -30,22 +30,56 @@ import clientGenpact from "../assets/images/client-genpact.jpg"
 export default function BookADemo() {
   const [recaptchaValue, setRecaptchaValue] = useState<string | null>(null)
 
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const [loading, setLoading] = useState(false);
 
-  const recaptchaRef = useRef<ReCAPTCHA>(null)
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    // 🚨 Block submit if captcha not verified
     if (!recaptchaValue) {
-      alert("Please complete the reCAPTCHA verification")
-      return
+      alert("Please verify that you are not a robot.");
+      return;
     }
-    // Handle form submission here
-    console.log("Form submitted with reCAPTCHA token:", recaptchaValue)
-    alert("Thank you! We'll be in touch soon to schedule your demo.")
 
-    recaptchaRef.current?.reset()
+    setLoading(true);
+    const form = e.currentTarget;
 
-  }
+    const payload = {
+      name: (form.elements.namedItem("name") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
+      company: (form.elements.namedItem("company") as HTMLInputElement)?.value,
+      subject: (form.elements.namedItem("subject") as HTMLInputElement).value,
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+      recaptchaToken: recaptchaValue,
+    };
+
+    try {
+      const response = await fetch("https://hirextra.us/api/contact.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await response.json();
+
+      if (!data.success) {
+        throw new Error(data.error || "Captcha verification failed");
+      }
+
+      alert("Demo request submitted successfully!");
+
+      form.reset();
+      recaptchaRef.current?.reset();
+      setRecaptchaValue(null);
+    } catch (err: any) {
+      alert(err.message || "Something went wrong");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const handleRecaptchaChange = (value: string | null) => {
     setRecaptchaValue(value)
@@ -84,6 +118,7 @@ export default function BookADemo() {
               </div>
 
               <form className="space-y-6 fade-in" onSubmit={handleSubmit}>
+
                 <div>
                   <label htmlFor="name" className="block text-dark font-semibold mb-2">
                     Full Name
@@ -167,23 +202,28 @@ export default function BookADemo() {
                   />
                 </div>
 
+                {/* CAPTCHA */}
                 <div className="flex justify-center">
-                   <ReCAPTCHA
-      ref={recaptchaRef}
-      sitekey="6LfDlT4UAAAAABkGFTbE1n5xSwVLc4bFFR9JFG8P"
-      onChange={handleRecaptchaChange}
-    />
+                  <ReCAPTCHA
+                    ref={recaptchaRef}
+                    sitekey="6LfDlT4UAAAAABkGFTbE1n5xSwVLc4bFFR9JFG8P"
+                    onChange={handleRecaptchaChange}
+                  />
                 </div>
 
                 <div className="pt-4">
                   <button
                     type="submit"
-                    className="btn-primary w-full text-lg"
+                    disabled={!recaptchaValue || loading}
+                    className={`btn-primary w-full text-lg ${!recaptchaValue || loading ? "opacity-50 cursor-not-allowed" : ""
+                      }`}
                   >
-                    Book Demo
+                    {loading ? "Submitting..." : "Book Demo"}
                   </button>
                 </div>
+
               </form>
+
 
               <div className="mt-8 pt-8 border-t border-gray-200">
                 <p className="text-center text-body text-sm">

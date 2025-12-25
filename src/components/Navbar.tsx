@@ -31,11 +31,10 @@ export default function Navbar() {
   const DropdownLink = ({ to, label }: { to: string; label: string }) => (
     <Link
       to={to}
-      className={`block rounded-md px-4 py-2 text-[14px] font-medium transition-colors duration-200 ${
-        isActive(to)
+      className={`block rounded-md px-4 py-2 text-[14px] font-medium transition-colors duration-200 ${isActive(to)
           ? "bg-blue-50 text-blue-600"
           : "text-slate-600 hover:bg-slate-50 hover:text-blue-600"
-      }`}
+        }`}
     >
       {label}
     </Link>
@@ -56,7 +55,7 @@ export default function Navbar() {
     >
       <div className="container mx-auto h-full px-4 lg:px-6">
         <div className="flex h-full items-center justify-between">
-          
+
           {/* LOGO */}
           <Link to="/" className="flex items-center">
             <img
@@ -68,7 +67,7 @@ export default function Navbar() {
 
           {/* DESKTOP NAV */}
           <div className="hidden lg:flex items-center gap-8 text-[15px] font-medium leading-none">
-            
+
             {/* Platform */}
             <div
               className="relative h-full flex items-center"
@@ -76,15 +75,13 @@ export default function Navbar() {
               onMouseLeave={closeMenu}
             >
               <button
-                className={`flex items-center gap-1 transition-colors outline-none ${
-                  openDropdown === "platform" ? "text-blue-400" : "text-white hover:text-blue-300"
-                }`}
+                className={`flex items-center gap-1 transition-colors outline-none ${openDropdown === "platform" ? "text-blue-400" : "text-white hover:text-blue-300"
+                  }`}
               >
                 Platform
                 <ChevronDown
-                  className={`w-3.5 h-3.5 shrink-0 transition-transform duration-200 ${
-                    openDropdown === "platform" ? "rotate-180" : ""
-                  }`}
+                  className={`w-3.5 h-3.5 shrink-0 transition-transform duration-200 ${openDropdown === "platform" ? "rotate-180" : ""
+                    }`}
                 />
               </button>
 
@@ -105,15 +102,13 @@ export default function Navbar() {
               onMouseLeave={closeMenu}
             >
               <button
-                className={`flex items-center gap-1 transition-colors outline-none ${
-                  openDropdown === "partners" ? "text-blue-400" : "text-white hover:text-blue-300"
-                }`}
+                className={`flex items-center gap-1 transition-colors outline-none ${openDropdown === "partners" ? "text-blue-400" : "text-white hover:text-blue-300"
+                  }`}
               >
                 Partners
                 <ChevronDown
-                  className={`w-3.5 h-3.5 shrink-0 transition-transform duration-200 ${
-                    openDropdown === "partners" ? "rotate-180" : ""
-                  }`}
+                  className={`w-3.5 h-3.5 shrink-0 transition-transform duration-200 ${openDropdown === "partners" ? "rotate-180" : ""
+                    }`}
                 />
               </button>
 
@@ -144,15 +139,13 @@ export default function Navbar() {
               onMouseLeave={closeMenu}
             >
               <button
-                className={`flex items-center gap-1 transition-colors outline-none ${
-                  openDropdown === "services" ? "text-blue-400" : "text-white hover:text-blue-300"
-                }`}
+                className={`flex items-center gap-1 transition-colors outline-none ${openDropdown === "services" ? "text-blue-400" : "text-white hover:text-blue-300"
+                  }`}
               >
                 Services
                 <ChevronDown
-                  className={`w-3.5 h-3.5 shrink-0 transition-transform duration-200 ${
-                    openDropdown === "services" ? "rotate-180" : ""
-                  }`}
+                  className={`w-3.5 h-3.5 shrink-0 transition-transform duration-200 ${openDropdown === "services" ? "rotate-180" : ""
+                    }`}
                 />
               </button>
 
@@ -176,9 +169,8 @@ export default function Navbar() {
             {/* Solutions */}
             <Link
               to="/direct-sourcing"
-              className={`transition-colors ${
-                isActive("/direct-sourcing") ? "text-blue-400" : "text-white hover:text-blue-300"
-              }`}
+              className={`transition-colors ${isActive("/direct-sourcing") ? "text-blue-400" : "text-white hover:text-blue-300"
+                }`}
             >
               Solutions
             </Link>
@@ -186,22 +178,20 @@ export default function Navbar() {
 
           {/* DESKTOP ACTIONS */}
           <div className="hidden lg:flex items-center gap-3">
-            <a
-              href="https://hirextra.com/"
-              target="_blank"
-              rel="noreferrer"
+            <Link
+              to="/book-a-demo"
               className="h-9 px-4 flex items-center justify-center rounded-md border border-white/20 text-[13px] font-medium text-white hover:bg-white/10 transition-colors"
             >
               Agency Recruiter Signup
-            </a>
-            <a
-              href="https://hirextra.com/"
-              target="_blank"
-              rel="noreferrer"
+            </Link>
+
+            <Link
+              to="/book-a-demo"
               className="h-9 px-4 flex items-center justify-center rounded-md border border-white/20 text-[13px] font-medium text-white hover:bg-white/10 transition-colors"
             >
               Employer Signup
-            </a>
+            </Link>
+
             <Link
               to="/book-a-demo"
               className="h-9 px-5 flex items-center justify-center rounded-md bg-blue-600 text-[13px] font-semibold text-white hover:bg-blue-700 shadow-sm transition-colors"
@@ -209,6 +199,7 @@ export default function Navbar() {
               Request Interest
             </Link>
           </div>
+
 
           {/* MOBILE TOGGLE */}
           <button
@@ -223,9 +214,8 @@ export default function Navbar() {
 
       {/* MOBILE MENU */}
       <div
-        className={`fixed inset-0 z-[60] bg-white transition-transform duration-300 lg:hidden ${
-          mobileMenuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed inset-0 z-[60] bg-white transition-transform duration-300 lg:hidden ${mobileMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
       >
         <div className="flex items-center justify-between p-5 border-b border-slate-100">
           <img src={logo} alt="Logo" className="h-8 w-auto" />
@@ -285,15 +275,15 @@ export default function Navbar() {
             >
               Book a Demo
             </Link>
-            <a
-              href="https://hirextra.com/"
-              target="_blank"
-              rel="noreferrer"
-              className="block w-full text-center border border-slate-200 text-slate-700 py-3 rounded-lg font-medium"
+
+            <Link
+              to="/book-a-demo"
+              className="block w-full text-center border border-slate-200 text-slate-700 py-3 rounded-lg font-medium hover:bg-slate-50 transition-colors"
             >
               Log In / Sign Up
-            </a>
+            </Link>
           </div>
+
         </div>
       </div>
     </nav>

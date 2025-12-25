@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react"
 import { Link } from "react-router-dom"
+
 import ReCAPTCHA from "react-google-recaptcha"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
@@ -103,18 +104,62 @@ const heroImages = [
 export default function Home() {
   const [recaptchaValue, setRecaptchaValue] = useState<string | null>(null)
   const recaptchaRef = useRef<ReCAPTCHA>(null)
-  const [activeClients, setActiveClients] = useState<"india" | "uk" | "us">("india");
+  const [activeClients, setActiveClients] = useState<"india" | "uk" | "us">("india");;
 
+const [loading, setLoading] = useState(false);
+const [error, setError] = useState<string | null>(null);
+const [success, setSuccess] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!recaptchaValue) {
-      alert("Please complete the reCAPTCHA verification")
-      return
-    }
-    // Handle form submission here
-    console.log("Form submitted with reCAPTCHA token:", recaptchaValue)
+ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+
+  setError(null);
+  setSuccess(null);
+
+  if (!recaptchaValue) {
+    setError("Please verify that you are not a robot.");
+    return;
   }
+
+  setLoading(true);
+
+  const form = e.currentTarget;
+
+  const payload = {
+    name: (form.elements.namedItem("name") as HTMLInputElement).value,
+    email: (form.elements.namedItem("email") as HTMLInputElement).value,
+    phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
+    company: (form.elements.namedItem("company") as HTMLInputElement)?.value || "",
+    subject: (form.elements.namedItem("subject") as HTMLInputElement).value,
+    message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+    recaptchaToken: recaptchaValue,
+  };
+
+  try {
+    const response = await fetch("https://hirextra.us/api/contact.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok || !data.success) {
+      throw new Error(data.error || "Submission failed");
+    }
+
+    setSuccess("Thank you! Your request has been submitted.");
+    form.reset();
+    recaptchaRef.current?.reset();
+    setRecaptchaValue(null);
+  } catch (err: any) {
+    setError(err.message || "Something went wrong. Please try again.");
+  } finally {
+    setLoading(false);
+  }
+};
   const handleNavigation = (path: any) => {
     // OPTION 1: Standard Window Navigation
     window.location.href = path;
@@ -1279,45 +1324,118 @@ export default function Home() {
                 <h3 className="font-heading text-3xl mb-6 text-dark">
                   Schedule a meeting to learn more about our platform.
                 </h3>
-                <form className="space-y-4" onSubmit={handleSubmit}>
-                  <input
-                    type="email"
-                    placeholder="Enter Your Email Address"
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand"
-                  />
-                  <input
-                    type="tel"
-                    placeholder="Enter Your Phone Number"
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand"
-                  />
-                  <input
-                    type="text"
-                    placeholder="Subject"
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand"
-                  />
-                  <textarea
-                    placeholder="Write your message"
-                    rows={4}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand"
-                  />
-                  <div className="flex justify-center">
-                    <ReCAPTCHA
-                      ref={recaptchaRef}
-                      sitekey="6LciWC8sAAAAANlYmO4NYJpjv5aUOeTEIHHegAl5"
-                      onChange={handleRecaptchaChange}
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="btn-primary"
-                  >
-                    Submit
-                  </button>
-                </form>
+               <form className="space-y-6 fade-in" onSubmit={handleSubmit}>
+
+  <div>
+    <label htmlFor="name" className="block text-dark font-semibold mb-2">
+      Full Name
+    </label>
+    <input
+      id="name"
+      type="text"
+      name="name"
+      placeholder="Enter your full name"
+      required
+      className="input-field"
+    />
+  </div>
+
+  <div>
+    <label htmlFor="email" className="block text-dark font-semibold mb-2">
+      Email Address
+    </label>
+    <input
+      id="email"
+      type="email"
+      name="email"
+      placeholder="Enter your email address"
+      required
+      className="input-field"
+    />
+  </div>
+
+  <div>
+    <label htmlFor="phone" className="block text-dark font-semibold mb-2">
+      Phone Number
+    </label>
+    <input
+      id="phone"
+      type="tel"
+      name="phone"
+      placeholder="Enter your phone number"
+      required
+      className="input-field"
+    />
+  </div>
+
+  <div>
+    <label htmlFor="company" className="block text-dark font-semibold mb-2">
+      Company Name
+    </label>
+    <input
+      id="company"
+      type="text"
+      name="company"
+      placeholder="Enter your company name"
+      className="input-field"
+    />
+  </div>
+
+  <div>
+    <label htmlFor="subject" className="block text-dark font-semibold mb-2">
+      Subject
+    </label>
+    <input
+      id="subject"
+      type="text"
+      name="subject"
+      placeholder="What would you like to learn about?"
+      required
+      className="input-field"
+    />
+  </div>
+
+  <div>
+    <label htmlFor="message" className="block text-dark font-semibold mb-2">
+      Message
+    </label>
+    <textarea
+      id="message"
+      name="message"
+      placeholder="Tell us about your requirements or questions..."
+      rows={5}
+      required
+      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand resize-none"
+    />
+  </div>
+
+  {/* CAPTCHA */}
+  <div className="flex justify-center">
+    <ReCAPTCHA
+      ref={recaptchaRef}
+      sitekey="6LfDlT4UAAAAABkGFTbE1n5xSwVLc4bFFR9JFG8P"
+      onChange={handleRecaptchaChange}
+    />
+  </div>
+
+  {/* STATUS MESSAGES */}
+  {error && <p className="text-red-600 text-sm">{error}</p>}
+  {success && <p className="text-green-600 text-sm">{success}</p>}
+
+  <div className="pt-4">
+    <button
+      type="submit"
+      disabled={!recaptchaValue || loading}
+      className={`btn-primary w-full text-lg ${
+        !recaptchaValue || loading ? "opacity-50 cursor-not-allowed" : ""
+      }`}
+    >
+      {loading ? "Submitting..." : "Book Demo"}
+    </button>
+  </div>
+
+</form>
+
               </div>
               <div className="flex justify-center">
                 <img
