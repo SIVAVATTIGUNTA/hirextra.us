@@ -273,7 +273,7 @@ export default function Navbar() {
               to="/book-a-demo"
               className="block w-full text-center bg-blue-600 text-white py-3 rounded-lg font-semibold shadow-md active:scale-[0.98] transition-transform"
             >
-              Book a Demo
+              Request Interest
             </Link>
 
             <Link

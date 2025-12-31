@@ -23,57 +23,111 @@ import skillPassport from "../assets/images/skill-passport.png"
 import hiregpt from "../assets/images/hiregpt.png"
 import aiRecruiter from "../assets/images/ai-recruiter.png"
 import autonomousAgents from "../assets/images/autonomous-agents.gif"
-import client2day3 from "../assets/images/client-2day-3.png"
-import clientPickzy from "../assets/images/client-pickzy.png"
-import client2day4 from "../assets/images/client-2day-4.png"
-import clientAlicesoft from "../assets/images/client-alicesoft.png"
-import clientHexaware from "../assets/images/client-hexaware.jpg"
-import clientValueonshore from "../assets/images/client-valueonshore.png"
 import client1234 from "../assets/images/client-1234.webp"
 import client12341 from "../assets/images/client-12341.webp"
 import client12342 from "../assets/images/client-12342.png"
 import client123457 from "../assets/images/client-123457.png"
-import clientMagnit from "../assets/images/client-magnit.png"
-import clientPhoton from "../assets/images/client-photon.jpg"
 import client12345678 from "../assets/images/client-12345678.png"
-import clientCli1 from "../assets/images/client-cli-1.png"
-import clientCli2 from "../assets/images/client-cli-2.jpg"
 import client123456789 from "../assets/images/client-123456789.png"
 import clientCli4 from "../assets/images/client-cli-4.png"
 import clientCli5 from "../assets/images/client-cli-5.png"
-import clientSaxus from "../assets/images/client-saxus.jpg"
-import clientSyntel from "../assets/images/client-syntel.png"
-import clientGenpact from "../assets/images/client-genpact.jpg"
 import multitasking from "../assets/images/multitasking.svg"
 import peopleData from "../assets/images/people-data.webp"
+import ind1 from "../assets/clients/india/ind1.png"
+import ind2 from "../assets/clients/india/ind2.png"
+import ind3 from "../assets/clients/india/ind3.webp"
+import ind4 from "../assets/clients/india/ind4.webp"
+import ind5 from "../assets/clients/india/ind5.png"
+import ind6 from "../assets/clients/india/ind6.png"
+import ind7 from "../assets/clients/india/ind7.png"
+import ind8 from "../assets/clients/india/ind8.png"
+import ind9 from "../assets/clients/india/ind9.png"
+import ind10 from "../assets/clients/india/ind10.png"
+import ind11 from "../assets/clients/india/ind11.jpg"
+import ind12 from "../assets/clients/india/ind12.png"
+import ind13 from "../assets/clients/india/ind13.png"
+import ind14 from "../assets/clients/india/ind14.jpg"
+import ind15 from "../assets/clients/india/ind15.jpg"
+import uk1 from "../assets/clients/uk/uk1.png"
+import uk2 from "../assets/clients/uk/uk2.jpg"
+import uk3 from "../assets/clients/uk/uk3.jpg"
+import uk4 from "../assets/clients/uk/uk4.jpg"
+import uk5 from "../assets/clients/uk/uk5.jpg"
+import uk6 from "../assets/clients/uk/uk6.png"
+import uk7 from "../assets/clients/uk/uk7.png"
+import uk8 from "../assets/clients/uk/uk8.jpg"
+import uk9 from "../assets/clients/uk/uk9.png"
+import uk10 from "../assets/clients/uk/uk10.jpg"
+import uk11 from "../assets/clients/uk/uk11.jpg"
+import uk12 from "../assets/clients/uk/uk12.png"
+import uk13 from "../assets/clients/uk/uk13.jpg"
+import uk14 from "../assets/clients/uk/uk14.jpg"
+import uk15 from "../assets/clients/uk/uk15.jpg"
+
+import us1 from "../assets/clients/usa/CSU_Logo_since_2016.svg"
+import us2 from "../assets/clients/usa/Collaberalogo.png"
+import us3 from "../assets/clients/usa/EPAY_logo.png"
+import us4 from "../assets/clients/usa/Einstein_Healthcare_Network_logo.svg"
+import us5 from "../assets/clients/usa/Expedient_Logo.png"
+import us6 from "../assets/clients/usa/Full Color Logo_2x.png"
+import us7 from "../assets/clients/usa/HWL_2C_300DPI.jpg"
+import us8 from "../assets/clients/usa/Innova™.jpg"
+import us9 from "../assets/clients/usa/Salesforce_Users_Email_list.png"
+import us10 from "../assets/clients/usa/Source.svg"
+import us11 from "../assets/clients/usa/TekWissen_Group_Logo.jpg"
+import us12 from "../assets/clients/usa/Wellstar_Health_System_Logo.svg"
+import us13 from "../assets/clients/usa/Zensar_Technologies_logo.svg"
+
 
 const CLIENTS = {
   india: [
-    client2day3,
-    clientPickzy,
-    client2day4,
-    clientAlicesoft,
-    clientHexaware,
-    clientSyntel,
-    clientGenpact,
+    ind1,
+    ind2,
+    ind3,
+    ind4,
+    ind5,
+    ind6,
+    ind7,
+    ind8,
+    ind9,
+    ind10,
+    ind11,
+    ind12,
+    ind13,
+    ind14,
+    ind15
   ],
   uk: [
-    clientValueonshore,
-    clientMagnit,
-    clientPhoton,
-    clientSaxus,
-    clientCli1,
-    clientCli2,
+    uk1,
+    uk2,
+    uk3,
+    uk4,
+    uk5,
+    uk6,
+    uk7,
+    uk8,
+    uk9,
+    uk10,
+    uk11,
+    uk12,
+    uk13, 
+    uk14,
+    uk15
   ],
   us: [
-    client1234,
-    client12341,
-    client12342,
-    client123457,
-    client12345678,
-    client123456789,
-    clientCli4,
-    clientCli5,
+    us1,
+    us2,
+    us3,
+    us4,
+    us5,
+    us6,
+    us7,
+    us8,
+    us9,
+    us10,
+    us11,
+    us12,
+    us13
   ],
 };
 
